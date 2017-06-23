@@ -1,0 +1,102 @@
+[
+  {
+    "name":"arkijogurtti 1kg mans-ban",
+    "shortname":"arkijogurtti_1kg_mans_ban",
+    "brand": "Valio",
+    "weight":"1",
+    "weightMeasure": "kg.",
+    "pricePerUnit": "0.92",
+    "unitType": "kpl",
+    "pricePerWeight": "0.92"
+  },
+  {
+    "name":"Kevytmaitojuoma Lakton",
+    "shortname":"kevytmaitojuoma_lakton",
+    "brand": "Kotimaista",
+    "weight":"1",
+    "weightMeasure": "l.",
+    "pricePerUnit": "0.97",
+    "unitType": "kpl",
+    "pricePerWeight": "0.97"
+  },
+  {
+    "name":"Cooking Cream 2dl",
+    "shortname":"cooking_cream",
+    "brand": "Pirkka",
+    "weight":"1",
+    "weightMeasure": "kg.",
+    "pricePerUnit": "4.79",
+    "unitType": "tlk",
+    "pricePerWeight": "4.79"
+  },
+  {
+    "name":"Valio Cheese",
+    "shortname":"valio_cheese",
+    "brand": "Valio",
+    "weight":"1",
+    "weightMeasure": "l.",
+    "pricePerUnit": "0.97",
+    "unitType": "kpl",
+    "pricePerWeight": "0.97"
+  },
+  {
+    "name":"Kotimaista Ground Beef",
+    "shortname":"kotimaista_ground_beef",
+    "brand": "Kotimaista",
+    "weight":"400",
+    "weightMeasure": "g.",
+    "pricePerUnit": "1.98",
+    "unitType": "kpl",
+    "pricePerWeight": "4.95"
+  },
+  {
+    "name":"Turkey Sandwich Meat",
+    "shortname":"turkey_sandwich_meat",
+    "brand": "Atra",
+    "weight":"0.25",
+    "weightMeasure": "kg.",
+    "pricePerUnit": "2.65",
+    "unitType": "ras",
+    "pricePerWeight": "10.60"
+  },  
+  {
+    "name":"Ruisleipa",
+    "shortname":"ruisleipa",
+    "brand": "Vaasan Ruispalat",
+    "weight":"650",
+    "weightMeasure": "g.",
+    "pricePerUnit": "1.67",
+    "unitType": "pss",
+    "pricePerWeight": "2.53"
+  },  
+  {
+    "name":"Milk Chocolate Karl Fazer",
+    "shortname":"milk_chocolate_karl_fazer",
+    "brand": "Karl Fazer",
+    "weight":"200",
+    "weightMeasure": "g.",
+    "pricePerUnit": "1.99",
+    "unitType": "kpl",
+    "pricePerWeight": "9.95"
+  },
+  {
+    "name":"Vanilla Ice Cream",
+    "shortname":"vanilla_ice_cream",
+    "brand": "Ingman",
+    "weight":"450",
+    "weightMeasure": "g.",
+    "pricePerUnit": "1.09",
+    "unitType": "kpl",
+    "pricePerWeight": "2.18"
+  },
+  {
+    "name":"Juhla mokka",
+    "shortname":"juhla_mokka",
+    "brand": "Paulig",
+    "weight":"0.5",
+    "weightMeasure": "kg.",
+    "pricePerUnit": "3.89",
+    "unitType": "pkt",
+    "pricePerWeight": "7.78"
+  }  
+]

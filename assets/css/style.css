@@ -1,0 +1,299 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* RESET STYLES */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; 
+}
+
+html {
+  line-height: 1; 
+}
+
+
+/* BASE STYLES */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+html {
+  background-color: #F7F7F7;
+  min-height: 100%;
+  height: auto;
+}
+
+body  {
+  font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 160%;
+  color: #555459;
+  line-height: 1.5rem;
+    *zoom: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', serif;
+  // font-weight: 400;
+  text-shadow: 1px 1px rgb(255,255,255, 1);
+}
+
+.nav-stacked>li>a:focus, .nav>li>a:hover {
+    text-decoration: underline;
+    background-color: transparent !important;
+}
+
+a img {
+  border: none; 
+}
+
+a, li > a {
+  color: black;
+  text-decoration: none;
+  // font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+}
+a:hover {
+    color: #00a651;
+    text-decoration: underline;
+}
+
+.thumbnail {
+    border: 0.001rem solid #ddd;
+    border-radius: 0px;
+	height: 100%;
+	// width: 100%;
+	min-width: 235px;
+    min-height: 335px;
+    position: relative;
+}
+
+.effect-fade-shadow {
+  box-shadow: 0 0px 0px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Transition to a bigger shadow on hover */
+.effect-fade-shadow:hover {
+  box-shadow: 0 13px 15px rgba(0,0,0,0.2);
+}
+
+/* GRID SYLES */
+
+@media (max-width: 992px) {
+	#leftCol {
+		display: none;
+	}
+}
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+	// margin-left: 0;
+}
+
+.products-grid {
+	padding-left: 0px;
+	padding-right: 0px; 
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 25px;
+}
+
+.main-view {
+	padding-left: 15px;
+}
+
+
+/* AMOUNT SELECTOR */
+
+.image-wrapper {
+	position: relative;
+    // width: 50%;
+}
+.img-responsive {
+    margin: 0 auto;
+    max-width: 160px;
+}
+.img-overlay {
+	opacity: 1;
+  	display: block;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+
+.amount-selector {
+	transition: .5s ease;
+	opacity: 0.9;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	width: 100%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+.amount-selected-box {
+	background-color: white;
+	color: black;
+    font-weight: bold;
+  	padding: 16px 32px;
+	border: 0.1rem solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+
+}
+
+.image-wrapper:hover .img-overlay {
+  opacity: 0.9;
+}
+
+.image-wrapper:hover .amount-selector {
+  // opacity: 0.9;
+}
+.amount-selected {
+    font-size: 30px;
+
+}
+.amount-selected-unit-type {
+	font-size: 12px;
+    text-transform: uppercase;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  position: absolute;
+  top: 32%;
+}
+.btn-circle:focus,.btn-circle:active {
+   outline: none !important;
+}
+.btn-circle-minus {
+    position: absolute;
+    left: 2rem;
+}
+.btn-circle-minus > span {
+    font-size: 40px;
+    font-weight: bolder;
+    position: absolute;
+    top: -1.1rem;
+    left: 0.475rem;
+}
+
+.btn-circle-plus {
+	position: absolute;
+    right: 2rem;
+}
+.btn-circle-plus > span {
+    font-size: 37px;
+    font-weight: bolder;
+    position: absolute;
+    top: -0.9rem;
+    left: 0.25rem;
+}
+
+
+
+/* PRODUCTS */
+.product-name {
+	font-weight: 600;
+    font-size: 13px;
+	color: black;
+}
+
+.product-subtitle {
+	font-weight: 500;
+    font-size: 11px;
+}
+
+footer.products-main-view {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+	width: 100%; 
+	padding-right: 5px; 
+}
+
+.price-and-quantity {
+	text-align: right;
+}
+.price {
+	position: relative;
+	font-size: 2.0rem;
+    font-weight: bolder;
+    letter-spacing: -2px;
+    padding-left: .15em;
+    color: black;
+    height: 72px;
+}
+
+.whole-number {
+    left: .1em;
+    font-size: 2.7rem;
+    padding-right: 8px;
+}
+
+.decimal {
+    vertical-align: top;
+    letter-spacing: -1px;
+    position: relative;
+    font-size: 1.3rem;
+    top: 0.3em;
+    padding-right: 5px;
+}
+.unit {
+	font-size: 0.8rem;
+    position: absolute;
+    top: 2.2em;
+    right: .05em;
+    color: #555;
+    letter-spacing: 0px;
+    padding-right: 4px;
+}
+.price-per-weight {
+    font-size: 11px;
+    color: #555;
+    font-weight: 400;
+    text-align: right;
+    letter-spacing: 0px;
+	position: absolute;
+    top: 3.2rem;
+    right: .05em;
+}
