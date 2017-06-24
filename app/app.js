@@ -1,31 +1,44 @@
-var app = angular.module('shoppingCart', []);	//'mgcrea.ngStrap'
-
-app.controller('mainController', 
-	['$scope', '$http', 
-	function($scope, $http){
-
-	$scope.message = 'welcome to the other side';
-
-	$http.get('app/data.json')
-		.then(function(resp){
-			$scope.products = resp.data;
+var app = angular.module('shoppingCartApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);	//'mgcrea.ngStrap'
 
 
-			$scope.priceArray= [];
-			angular.forEach($scope.products, function (product, key) {
-				product['wholeNumber'] = product.pricePerUnit.split('.')[0];
-				product['decimal'] = product.pricePerUnit.split('.')[1];
-				
-				product['amountSelected'] = 0;
+// check if anything is in the cart at startup
+app.run(['$rootScope', function($rootScope) {
 
-				// console.log(product.wholeNumber);
-			    $scope.priceArray.push({ 'wholeNumber': product.pricePerUnit.split('.')[0], 
-			    					'decimal': product.pricePerUnit.split('.')[1] });
-			});
+	// $rootScope.cart = [];
+	// cl
 
-
-			console.log($scope.priceArray)
-		}); //get
+	// $rootScope.$on('someEvent', function(event, next, previous, error) {
+	// 	$rootScope.message = 'Sorry, you must log in to acces that page';
+	// 	$location.path('/login');
+	// }); // routeChangeError
+}]); // run
 
 
+app.config(['$routeProvider', '$locationProvider', 
+		function($routeProvider, $locationProvider) {
+
+	$routeProvider
+		.when('/products', {
+			templateUrl: 'app/components/productList/productListView.html',
+			controller: 'ProductListController'	
+		})
+		.when('/product/:pId', {
+			templateUrl: 'app/components/product/productView.html',
+			controller: 'ProductController'	
+		})
+		.when('/category/:cName', {
+			templateUrl: 'app/components/category/categoryView.html',
+			controller: 'CategoryController'
+		})
+		.otherwise({
+			redirectTo: '/products'
+		});
+
+
+	$locationProvider
+	  .html5Mode(false)
+	  .hashPrefix('!');
+	// $locationProvider.html5Mode(true);
+	// $locationProvider.hashPrefix('');
+	
 }]);

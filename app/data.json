@@ -7,7 +7,8 @@
     "weightMeasure": "kg.",
     "pricePerUnit": "0.92",
     "unitType": "kpl",
-    "pricePerWeight": "0.92"
+    "pricePerWeight": "0.92",
+    "category": "dairy"
   },
   {
     "name":"Kevytmaitojuoma Lakton",
@@ -17,7 +18,8 @@
     "weightMeasure": "l.",
     "pricePerUnit": "0.97",
     "unitType": "kpl",
-    "pricePerWeight": "0.97"
+    "pricePerWeight": "0.97",
+    "category": "dairy"
   },
   {
     "name":"Cooking Cream 2dl",
@@ -25,19 +27,21 @@
     "brand": "Pirkka",
     "weight":"1",
     "weightMeasure": "kg.",
-    "pricePerUnit": "4.79",
+    "pricePerUnit": "0.97",
     "unitType": "tlk",
-    "pricePerWeight": "4.79"
-  },
+    "pricePerWeight": "0.97",
+    "category": "dairy"
+ },
   {
     "name":"Valio Cheese",
     "shortname":"valio_cheese",
     "brand": "Valio",
     "weight":"1",
     "weightMeasure": "l.",
-    "pricePerUnit": "0.97",
+    "pricePerUnit": "4.79",
     "unitType": "kpl",
-    "pricePerWeight": "0.97"
+    "pricePerWeight": "4.79",
+    "category": "dairy"
   },
   {
     "name":"Kotimaista Ground Beef",
@@ -47,7 +51,8 @@
     "weightMeasure": "g.",
     "pricePerUnit": "1.98",
     "unitType": "kpl",
-    "pricePerWeight": "4.95"
+    "pricePerWeight": "4.95",
+    "category": "All kinds of Meats"
   },
   {
     "name":"Turkey Sandwich Meat",
@@ -57,7 +62,8 @@
     "weightMeasure": "kg.",
     "pricePerUnit": "2.65",
     "unitType": "ras",
-    "pricePerWeight": "10.60"
+    "pricePerWeight": "10.60",
+    "category": "All kinds of Meats"
   },  
   {
     "name":"Ruisleipa",
@@ -67,7 +73,8 @@
     "weightMeasure": "g.",
     "pricePerUnit": "1.67",
     "unitType": "pss",
-    "pricePerWeight": "2.53"
+    "pricePerWeight": "2.53",
+    "category": "All kinds of Meats"
   },  
   {
     "name":"Milk Chocolate Karl Fazer",
@@ -77,7 +84,8 @@
     "weightMeasure": "g.",
     "pricePerUnit": "1.99",
     "unitType": "kpl",
-    "pricePerWeight": "9.95"
+    "pricePerWeight": "9.95",
+    "category": "Desserts"
   },
   {
     "name":"Vanilla Ice Cream",
@@ -87,7 +95,8 @@
     "weightMeasure": "g.",
     "pricePerUnit": "1.09",
     "unitType": "kpl",
-    "pricePerWeight": "2.18"
+    "pricePerWeight": "2.18",
+    "category": "Desserts"
   },
   {
     "name":"Juhla mokka",
@@ -97,6 +106,7 @@
     "weightMeasure": "kg.",
     "pricePerUnit": "3.89",
     "unitType": "pkt",
-    "pricePerWeight": "7.78"
+    "pricePerWeight": "7.78",
+    "category": "Drinks"
   }  
 ]

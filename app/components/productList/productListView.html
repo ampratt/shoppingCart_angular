@@ -1,0 +1,82 @@
+<section class="product-list">
+  
+<div class="container">
+
+  <div class="row main-body">
+
+    <div class="col-md-2" id="leftCol">
+      <ul class="nav nav-stacked" id="sidebar">
+        <li><a href="#sec0">Sample section 0</a></li>
+        <li><a href="#sec1">Section 1</a></li>
+        <li>
+          <a href="#sec2">Section 2</a>
+          <ul class="nav nav-stacked">
+            <li><a href="#sec2a">Section 2 a</a></li>
+            <li><a href="#sec2b">Section 2 b</a></li>
+          </ul>
+        </li>
+        <li><a href="#sec3">Section 3</a></li>
+        <li><a href="#sec4">Section 4</a></li>
+      </ul>
+  </div> <!-- leftCol -->
+
+  <div class="col-md-10 col-xs-12 main-view" id="mainCol">
+      <div class="row display-flex">
+          <div ng-repeat="product in products" class="clearfix ">
+            <div class="col-xs-4 col-sm-2 col-md-2 cl-lg-1 products-grid">
+
+              <div class="thumbnail effect-fade-shadow">
+                <div class="image-wrapper clearfix"
+                      ng-mouseenter="hover=true" ng-mouseleave="hover=false">
+
+                  <img ng-src="assets/images/products/{{product.shortname}}.png" alt="Photo of {{product.name}}"
+                      class="img-responsive img-overlay">
+
+                  <div class="amount-selector"
+                        ng-show="hover">
+                    
+                    <button type="button" class="btn btn-danger btn-circle btn-circle-minus"><span>-</span></button>
+
+                    <div class="amount-selected-box">
+                      <div class="amount-selected">{{ product.amountSelected }}</div>
+                      <div class="amount-selected-unit-type">{{ product.unitType }}</div>
+                    </div> <!-- amount-selected-box -->
+
+                    <button type="button" class="btn btn-success btn-circle btn-circle-plus"><span>+</span></button>
+
+                  </div> <!-- amount-selector -->
+                </div> <!-- image-wrapper -->
+
+                <div class="caption">
+                  <header>
+                      <h3 class="product-name">{{ product.name }}</h3>
+                      <p class="product-subtitle">{{ product.weight }} {{ product.weightMeasure }} <span ng-show="product.brand">, </span>{{ product.brand }}</p>
+                  </header><!-- /header -->
+
+                  <footer class="products-main-view">
+                    <div class="price-and-quantity">
+                      <div class="price">
+                        <span class="whole-number">{{ product.wholeNumber }}</span>
+                        <span class="decimal">{{ product.decimal }}</span>
+                        <span class="unit">/{{ product.unitType }}</span>
+
+                          <span class="price-per-weight">{{ product.pricePerWeight }}&euro;/{{ product.weightMeasure }}</span>
+
+                    </div> <!-- price -->
+                      
+                    </div>
+                  </footer>
+                </div>
+              </div> <!-- thumbnail -->
+              
+            </div> <!-- col -->  
+          </div>
+      </div> <!-- row -->
+  </div> <!-- mainCol -->
+
+
+  </div> <!-- row main-body -->
+     
+
+</div> <!-- container -->
+</section>

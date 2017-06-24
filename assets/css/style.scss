@@ -1,3 +1,7 @@
+
+$myGreen : #00a651;
+$myPinkBg : #ec008c;
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -64,7 +68,7 @@ body  {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', serif;
   // font-weight: 400;
-  text-shadow: 1px 1px rgb(255,255,255, 1);
+  text-shadow: 1px 1px 0 rgba(255,255,255, 1);
 }
 
 .nav-stacked > li > a {
@@ -85,7 +89,7 @@ a, li > a {
   // font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
 }
 a:hover {
-    color: #00a651;
+    color: $myGreen;
     text-decoration: underline;
 }
 
@@ -145,12 +149,11 @@ a:hover {
 
 
 /* HEADERS */
+$bgDefault      : #00a651;
+$bgHighlight    : #27ae60;
+$colDefault     : #ecf0f1;
+$colHover	 	: #d1ffed;
 
-/* Green * /
-#2ecc71      : #00a651;
-#27ae60    : #27ae60;
-#ecf0f1     : #ecf0f1;
-#d1ffed       : #d1ffed;
 
 /* --- Style --- */
 .navbar {
@@ -158,59 +161,61 @@ a:hover {
     border-radius: 0px;
 }
 .navbar-default {
-    background-color: #00a651;
-    border-color: #27ae60;
+    background-color: $bgDefault;
+    border-color: $bgHighlight;
     .navbar-brand {
-        color: #ecf0f1;
+        color: $colDefault;
         &:hover, &:focus {
-            color: #d1ffed; }}
+            color: $colHover; }}
     .navbar-nav {
         > li {
             > a {
-                color: #ecf0f1;
+                color: $colDefault;
                 &:hover, &:focus {
-                    color: #d1ffed;   }}}
+                    color: $colHover;   }}}
         .active {
             > a, > a:hover, > a:focus {
-                color: #d1ffed;
-                background-color: #27ae60; }}
+                color: $colHover;
+                background-color: $bgHighlight; }}
         .open {
             > a, > a:hover, > a:focus {
-                color: #d1ffed;
-                background-color: #27ae60;
+                color: $colHover;
+                background-color: $bgHighlight;
                 .caret {
-                    border-top-color: #d1ffed;
-                    border-bottom-color: #d1ffed; }}}
+                    border-top-color: $colHover;
+                    border-bottom-color: $colHover; }}}
         > .dropdown {
             > a {
                 .caret {
-                    border-top-color: #ecf0f1;
-                    border-bottom-color: #ecf0f1; }
+                    border-top-color: $colDefault;
+                    border-bottom-color: $colDefault; }
                 &:hover, &:focus {
                     .caret {
-                        border-top-color: #d1ffed;
-                        border-bottom-color: #d1ffed; }}}}}
+                        border-top-color: $colHover;
+                        border-bottom-color: $colHover; }}}}}
     .navbar-toggle {
-        border-color: #27ae60;
+        border-color: $bgHighlight;
         &:hover, &:focus {
-            background-color: #27ae60; }
+            background-color: $bgHighlight; }
         .icon-bar {
-            background-color: #ecf0f1; }}}
+            background-color: $colDefault; }}}
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #ecf0f1;
+        color: $colDefault;
         &:hover, &:focus {
-            color: #d1ffed;
-            background-color: #27ae60; }}
+            color: $colHover;
+            background-color: $bgHighlight; }}
 }
 .navbar-form .input-group>.form-control {
     border-radius: 15px 0 0 15px;
 }
 
+
+
 .search-btn {
     // height: 38px;
-    background: #ec008c;
-    border: 1px solid #ec008c;
+    background: $myPinkBg;
+    border: 1px solid $myPinkBg;
     color: #fff;
     // width: 51px;
     // cursor: pointer;
@@ -223,15 +228,33 @@ a:hover {
     -moz-transition: background .21s ease;
     -o-transition: background .21s ease;
     transition: background .21s ease;
+
+	&:hover {
+		background-color: darken($myPinkBg, 5%);
+		border-color: darken($myPinkBg, 5%);
+		color: white;
+	}
+	&:visited, &:active {
+		color: white;
+	}
 }
 
+button.search-btn:focus,button .search-btn:active {
+   outline: none !important;
+}
+
+// .input-group-btn:hover {
+// 	background-color: darken($myPinkBg, 10%);
+// }
+
 #header {
-  // background-color: #00a651;
+  // background-color: $bgDefault;
   border-bottom: 1px solid #e8e8e8;
 }
 .header-logo, .header-logo a, .header-logo a img {
   width: 100px;
 }
+
 
 .nav-sections {
   border-bottom: 0.05rem solid #ddd;
@@ -239,11 +262,79 @@ a:hover {
 }  
 .sub-nav {
   width: 100%;
-  // padding-left: 20px;
-  // padding-right: 20px;
+  height: 46px;
+}
+
+.nav-rel {
+	position: relative;
+}
+
+.nav-pills {
+	> li:hover {
+	    border-bottom: 2px solid $myGreen;
+        color: black;
+	}
+	> li:active {
+		background-color: none;
+	}
+}
+
+.nav-pills > li.active > a, 
+.nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a:focus {
+    color:black;
+    background-color: white;
+}
+
+.active {
+    background-color : none;
+	border-bottom: 2px solid $myGreen;
+}
+
+.nav-pill-categories,
+.nav-pills>li>a {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: capitalize;
+    &:hover {
+    	text-decoration: none;
+    	background-color: none;
+    }
+}
+
+.btns-vert {
+	padding-top: 6px;
 
 }
 
+.btn-register {
+	&:hover {
+		background-color: shade(#FFFFFF, 5%);
+	}
+}
+.btn-pink {
+	background-color: $myPinkBg;
+    border-color: darken($myPinkBg, 10%);
+    color: white;
+	&:hover {
+		color: white;
+	}
+}
+
+
+
+/* Shopping Cart */
+
+.cart-btn-group {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 7px;
+}
+.dropdown-menu {
+	width: 500px;
+    padding: 10px 10px;
+
+}
 
 
 
@@ -265,7 +356,7 @@ a:hover {
 }
 
 .amount-selector {
-	transition: .5s ease;
+	transition: .05s ease;
 	opacity: 0.9;
 	position: absolute;
 	top: 75%;

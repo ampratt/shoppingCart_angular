@@ -1,0 +1,30 @@
+[
+	{
+		"item": {
+				    "name":"arkijogurtti 1kg mans-ban",
+				    "shortname":"arkijogurtti_1kg_mans_ban",
+				    "brand": "Valio",
+				    "weight":"1",
+				    "weightMeasure": "kg.",
+				    "pricePerUnit": "0.92",
+				    "unitType": "kpl",
+				    "pricePerWeight": "0.92",
+				    "category": "dairy"
+				},
+		"quantity": 1
+	},
+	{
+		"item": {
+					"name":"Valio Cheese",
+					"shortname":"valio_cheese",
+					"brand": "Valio",
+					"weight":"1",
+					"weightMeasure": "l.",
+					"pricePerUnit": "4.79",
+					"unitType": "kpl",
+					"pricePerWeight": "4.79",
+					"category": "dairy"
+				},
+		"quantity": 2
+	}
+]
