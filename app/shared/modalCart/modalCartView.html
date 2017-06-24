@@ -1,51 +1,68 @@
 <!--Dropdown button -->
 <div ng-controller="DropDownController">
-    <!-- Simple dropdown -->
-<!--     <span uib-dropdown on-toggle="toggled(open)">
-      <a href id="simple-dropdown" uib-dropdown-toggle>
-        Click me for a dropdown, yo!
-      </a>
-      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-        <li ng-repeat="choice in items">
-          <a href>{{choice}}</a>
-        </li>
-      </ul>
-    </span> -->
-<!-- <div>
-    <span ng-repeat="item in cart">
-        <p>
-            {{item.item.name}} - {{item.quantity}}
-        </p>
-    </span>  
-</div>
- -->
+
 <div class="btn-group" uib-dropdown is-open="status.isopen">
-  <button class="btn btn-success" id="dropdown-cart-btn" type="button" 
+  <a class="btn btn-success" id="dropdown-cart-btn" 
             uib-dropdown-toggle ng-disabled="disabled">
-            Shopping Cart
-            <span class="caret"></span>
-  </button>
+            <div class="cart-icon">
+                <span><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</span>
+            </div>
+            <div class="cart-info">
+                <div ng-show="totalCartSum">{{ totalCartSum | number:2 }} &euro;</div>
+                <div>{{ itemsInCart }} items</div>
+            </div>
+            <div class="cart-caret">
+                <span class="caret"></span>
+            </div>
+  </a>
 
 <div class="container dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="dropdown-cart-btn"> <!-- template-url="dropdown.html" -->
 
   <header>
-    <h3>Your Shopping Cart</h3>
+    <h2 class="dropdown-cart-title">Your Shopping Cart</h2>
     <hr />
   </header>
-  <ul ng-repeat="item in cart">
-    <li>
-        <p>
-            {{item.item.name}} - {{item.quantity}}
-        </p>
-    </li>
-<!--     <li role="menuitem"><a href="#">Something else here</a></li>
-    <li class="divider"></li>
-    <li role="menuitem"><a href="#">Separated link</a></li> -->
-  </ul>
+
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tr ng-repeat="item in cart">
+            <td class="item-image">
+                  <img ng-src="assets/images/products/{{item.item.shortname}}.png" alt="Photo of {{item.item.name}}"
+                      class="img-responsive-xs" />
+            </td>
+            <td class="item-name">{{item.item.name}}</td>
+            <td class="item-price">{{item.item.pricePerUnit}} &euro;</td>
+            <td>
+                <div class="item-quantity">{{item.quantity}}</div>
+                <div class="item-quantity-unit-type">{{item.item.unitType | uppercase}}</div>
+            </td>
+            <td class="item-delete-icon"><a type="button" ng-click="removeFromCart(item)">X</a></td>
+        </tr>
+      </table>
+    </div>
+  
+  <hr />
+
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tr class="cart-total">
+            <td align="right" class="item-caption">Total # products:</td>
+            <td align="right" class="total-cart-count">{{ itemsInCart }}</td>
+        </tr>
+        <tr class="cart-total">
+            <td align="right" class="item-caption">Total Cost:</td>
+            <td align="right" class="total-cart-price">{{ totalCartSum | number:2}} &euro;</td>
+        </tr>
+      </table>
+    </div>
 
   <hr />
   <footer>
-      <button class="btn btn-sm btn-pink pull-right" type="button">Continue to Checkout</button>
+      <button class="btn btn-sm btn-pink pull-right" type="button">
+        Continue to Checkout
+        <span class="gotcha"><br>(if this app required that)</span>
+    </button>
   </footer>
 </div> <!-- dropdown-menu -->
 

@@ -42,7 +42,10 @@
                       <div class="amount-selected-unit-type">{{ product.unitType }}</div>
                     </div> <!-- amount-selected-box -->
 
-                    <button type="button" class="btn btn-success btn-circle btn-circle-plus"><span>+</span></button>
+                    <button type="button" class="btn btn-success btn-circle btn-circle-plus"
+                            ng-click="addToCart(product)">
+                            <span>+</span>
+                    </button>
 
                   </div> <!-- amount-selector -->
                 </div> <!-- image-wrapper -->

@@ -1,7 +1,8 @@
 [
 	{
 		"item": {
-				    "name":"arkijogurtti 1kg mans-ban",
+				    "id": "U0nTvI4dBAgvaG0pUHc2",
+					"name":"arkijogurtti 1kg mans-ban",
 				    "shortname":"arkijogurtti_1kg_mans_ban",
 				    "brand": "Valio",
 				    "weight":"1",
@@ -15,6 +16,7 @@
 	},
 	{
 		"item": {
+				    "id": "9T4hYLJJg0lmlQsxInPF",
 					"name":"Valio Cheese",
 					"shortname":"valio_cheese",
 					"brand": "Valio",

@@ -1,17 +1,17 @@
 /* DROPDOWN WINDOW */
 app.controller('DropDownController', function ($scope, $log) {
-  $scope.items = [
-    'The first choice!',
-    'And another choice for you.',
-    'but wait! A third!'
-  ];
+  // $scope.items = [
+  //   'The first choice!',
+  //   'And another choice for you.',
+  //   'but wait! A third!'
+  // ];
 
   $scope.status = {
     isopen: false
   };
 
   $scope.toggled = function(open) {
-    $log.log('Dropdown is now: ', open);
+    // $log.log('Dropdown is now: ', open);
   };
 
   $scope.toggleDropdown = function($event) {

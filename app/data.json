@@ -1,5 +1,6 @@
 [
   {
+    "id": "U0nTvI4dBAgvaG0pUHc2",
     "name":"arkijogurtti 1kg mans-ban",
     "shortname":"arkijogurtti_1kg_mans_ban",
     "brand": "Valio",
@@ -11,6 +12,7 @@
     "category": "dairy"
   },
   {
+    "id": "y9UKnhMhxsxqD5rzg0Xo",
     "name":"Kevytmaitojuoma Lakton",
     "shortname":"kevytmaitojuoma_lakton",
     "brand": "Kotimaista",
@@ -22,6 +24,7 @@
     "category": "dairy"
   },
   {
+    "id": "59RmEZkMyhiXAH7TVmV2",
     "name":"Cooking Cream 2dl",
     "shortname":"cooking_cream",
     "brand": "Pirkka",
@@ -33,6 +36,7 @@
     "category": "dairy"
  },
   {
+    "id": "9T4hYLJJg0lmlQsxInPF",
     "name":"Valio Cheese",
     "shortname":"valio_cheese",
     "brand": "Valio",
@@ -44,6 +48,7 @@
     "category": "dairy"
   },
   {
+    "id": "vrhnmj9W3z75Wa7FMq42",
     "name":"Kotimaista Ground Beef",
     "shortname":"kotimaista_ground_beef",
     "brand": "Kotimaista",
@@ -55,6 +60,7 @@
     "category": "All kinds of Meats"
   },
   {
+    "id": "eSdjAKNLgL8ktewXYXIq",
     "name":"Turkey Sandwich Meat",
     "shortname":"turkey_sandwich_meat",
     "brand": "Atra",
@@ -66,6 +72,7 @@
     "category": "All kinds of Meats"
   },  
   {
+    "id": "fB7uzfYJBhiDxbmuyBqI",
     "name":"Ruisleipa",
     "shortname":"ruisleipa",
     "brand": "Vaasan Ruispalat",
@@ -77,6 +84,7 @@
     "category": "All kinds of Meats"
   },  
   {
+    "id": "STZ1Urdlvy5m6MvKN4OC",
     "name":"Milk Chocolate Karl Fazer",
     "shortname":"milk_chocolate_karl_fazer",
     "brand": "Karl Fazer",
@@ -88,6 +96,7 @@
     "category": "Desserts"
   },
   {
+    "id": "ds5lQcPczGJ6ZoUFIdJM",
     "name":"Vanilla Ice Cream",
     "shortname":"vanilla_ice_cream",
     "brand": "Ingman",
@@ -99,6 +108,7 @@
     "category": "Desserts"
   },
   {
+    "id": "CqG4NGWmSsWxR0PTYuM6",
     "name":"Juhla mokka",
     "shortname":"juhla_mokka",
     "brand": "Paulig",

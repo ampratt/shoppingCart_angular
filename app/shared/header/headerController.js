@@ -14,4 +14,24 @@ app.controller('HeaderController',
     }
 
 
+	$scope.removeFromCart = function(item) {	
+		ShoppingCartService.removeFromCart(item);
+	}// removeFromCart
+
+	$scope.getItem = function() {
+
+	}
+
+	$scope.getItemCount = function(cart) {
+		ShoppingCartService.getItemCount(cart);
+	} // getItemCount
+
+	$scope.getTotalSum = function() {
+		//recursively
+		ShoppingCartService.getTotalSum();
+			// myCartObject.getItem();
+
+	} // getTotalSum
+
+
 }]); // headerController
