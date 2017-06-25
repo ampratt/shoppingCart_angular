@@ -1,0 +1,13 @@
+DONE - adding items in one view syncs across all views
+
+DONE - removing items in one view syncs across all views
+
+
+
+TODO - add filter to SINGLE controller for product and category views
+
+TODO - on removing item from cart, sync list views
+
+TODO - make cart window scrollable (max number of views in window at a time)
+
+TODO - stop cart window from closing

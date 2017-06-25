@@ -1,16 +1,10 @@
-var app = angular.module('shoppingCartApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);	//'mgcrea.ngStrap'
+var app = angular.module('shoppingCartApp', 
+	['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);	//'filter' 'mgcrea.ngStrap'
 
 
 // check if anything is in the cart at startup
 app.run(['$rootScope', function($rootScope) {
 
-	// $rootScope.cart = [];
-	// cl
-
-	// $rootScope.$on('someEvent', function(event, next, previous, error) {
-	// 	$rootScope.message = 'Sorry, you must log in to acces that page';
-	// 	$location.path('/login');
-	// }); // routeChangeError
 }]); // run
 
 
@@ -20,16 +14,32 @@ app.config(['$routeProvider', '$locationProvider',
 	$routeProvider
 		.when('/products', {
 			templateUrl: 'app/components/productList/productListView.html',
-			controller: 'ProductListController'	
-		})
-		.when('/product/:pId', {
-			templateUrl: 'app/components/product/productView.html',
-			controller: 'ProductController'	
+			controller: 'ProductListController',
+			resolve: {
+				initialData: function(productControllerInitialData){
+					return productControllerInitialData();
+				}
+			},
 		})
 		.when('/category/:cName', {
 			templateUrl: 'app/components/category/categoryView.html',
-			controller: 'CategoryController'
+			controller: 'ProductListController',
+			resolve: {
+				initialData: function(productControllerInitialData){
+					return productControllerInitialData();
+				}
+				// category: function(RouteParamService){
+				// 	return RouteParamService.getRouteCategory();
+				// },
+				// products: function(ProductListService) {
+				// 	return ProductListService.fetch();
+				// }
+			},
 		})
+		// .when('/product/:pId', {
+		// 	templateUrl: 'app/components/product/productView.html',
+		// 	controller: 'ProductController'	
+		// })
 		.otherwise({
 			redirectTo: '/products'
 		});
@@ -40,5 +50,4 @@ app.config(['$routeProvider', '$locationProvider',
 	  .hashPrefix('!');
 	// $locationProvider.html5Mode(true);
 	// $locationProvider.hashPrefix('');
-	
 }]);

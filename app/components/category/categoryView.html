@@ -22,7 +22,10 @@
 
   <div class="col-md-10 col-xs-12 main-view" id="mainCol">
       <div class="row display-flex">
-          <div ng-repeat="product in products" class="clearfix ">
+
+          <!-- track by $index | productCategory:whichCategory -->
+          <div ng-repeat="product in products" 
+                class="clearfix ">
             <div class="col-xs-4 col-sm-2 col-md-2 cl-lg-1 products-grid">
 
               <div class="thumbnail effect-fade-shadow">
@@ -42,7 +45,8 @@
                       <div class="amount-selected-unit-type">{{ product.unitType }}</div>
                     </div> <!-- amount-selected-box -->
 
-                    <button type="button" class="btn btn-success btn-circle btn-circle-plus"><span>+</span></button>
+                    <button type="button" class="btn btn-success btn-circle btn-circle-plus"
+                          ng-click="addToCart(product)"><span>+</span></button>
 
                   </div> <!-- amount-selector -->
                 </div> <!-- image-wrapper -->

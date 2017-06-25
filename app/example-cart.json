@@ -1,18 +1,18 @@
 [
 	{
-		"item": {
-				    "id": "U0nTvI4dBAgvaG0pUHc2",
-					"name":"arkijogurtti 1kg mans-ban",
-				    "shortname":"arkijogurtti_1kg_mans_ban",
-				    "brand": "Valio",
-				    "weight":"1",
-				    "weightMeasure": "kg.",
-				    "pricePerUnit": "0.92",
-				    "unitType": "kpl",
-				    "pricePerWeight": "0.92",
-				    "category": "dairy"
+		"item":	{
+					"id": "y9UKnhMhxsxqD5rzg0Xo",
+					"name":"Kevytmaitojuoma Lakton",
+					"shortname":"kevytmaitojuoma_lakton",
+					"brand": "Kotimaista",
+					"weight":"1",
+					"weightMeasure": "l.",
+					"pricePerUnit": "0.97",
+					"unitType": "kpl",
+					"pricePerWeight": "0.97",
+					"category": "dairy"
 				},
-		"quantity": 1
+		"quantity": 2
 	},
 	{
 		"item": {

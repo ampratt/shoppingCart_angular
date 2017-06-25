@@ -1,0 +1,32 @@
+/* GRID SYLES */
+
+#leftCol {
+  padding-left: 0;
+}
+
+@media (max-width: 992px) {
+	#leftCol {
+		display: none;
+	}
+}
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+	// margin-left: 0;
+}
+
+.products-grid {
+	padding-left: 0px;
+	padding-right: 0px; 
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 25px;
+}
+
+.main-view {
+	padding-left: 15px;
+}

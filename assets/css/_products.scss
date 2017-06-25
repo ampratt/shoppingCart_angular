@@ -1,0 +1,66 @@
+/* PRODUCTS */
+.product-name {
+	font-weight: 600;
+    font-size: 13px;
+	color: black;
+}
+
+.product-subtitle {
+	font-weight: 500;
+    font-size: 11px;
+}
+
+footer.products-main-view {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+	width: 100%; 
+	padding-right: 5px; 
+}
+
+.price-and-quantity {
+	text-align: right;
+}
+.price {
+	position: relative;
+	font-size: 2.0rem;
+    font-weight: bolder;
+    letter-spacing: -2px;
+    padding-left: .15em;
+    color: black;
+    height: 72px;
+}
+
+.whole-number {
+    left: .1em;
+    font-size: 2.7rem;
+    padding-right: 8px;
+}
+
+.decimal {
+    vertical-align: top;
+    letter-spacing: -1px;
+    position: relative;
+    font-size: 1.3rem;
+    top: 0.3em;
+    padding-right: 5px;
+}
+.unit {
+	font-size: 0.8rem;
+    position: absolute;
+    top: 2.2em;
+    right: .05em;
+    color: #555;
+    letter-spacing: 0px;
+    padding-right: 4px;
+}
+.price-per-weight {
+    font-size: 11px;
+    color: #555;
+    font-weight: 400;
+    text-align: right;
+    letter-spacing: 0px;
+	position: absolute;
+    top: 3.2rem;
+    right: .05em;
+}
