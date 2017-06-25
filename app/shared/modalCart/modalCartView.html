@@ -8,9 +8,12 @@
                 <span><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 </span>
             </div>
-            <div class="cart-info">
-                <div ng-show="totalCartSum">{{ totalCartSum | number:2 }} &euro;</div>
-                <div>{{ itemsInCart }} items</div>
+            <div class="cart-info" ng-controller="HeaderController">
+                <div>
+                    {{ lookupCartTotalSum() | number:2 }} &euro;
+                </div>
+                <!-- <div ng-show="totalCartSum">{{ totalCartSum | number:2 }} &euro;</div> -->
+                <div>{{ lookupCartItemsCount() }} items</div>
             </div>
             <div class="cart-caret">
                 <span class="caret"></span>

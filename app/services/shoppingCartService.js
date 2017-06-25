@@ -13,8 +13,8 @@ app.factory('ShoppingCartService',
 			console.log('cart contents:')
 			console.log($rootScope.cart);
 
-			myCartObject.getItemCount($rootScope.cart);
-			myCartObject.getTotalSum($rootScope.cart);
+			// myCartObject.getItemCount($rootScope.cart);
+			// myCartObject.getTotalSum($rootScope.cart);
 
 			// angular.forEach($rootScope.cart, function (item, key) {
 			// 	$rootScope.itemsInCart += item.quantity;
@@ -65,32 +65,63 @@ app.factory('ShoppingCartService',
 
 		},
 
-		getItemCount: function(cart) {
-			$rootScope.itemsInCart = 0;
-			// let items = 0;
-			angular.forEach(cart, function (item, key) {
-				$rootScope.itemsInCart += item.quantity;
-			});
-			return $rootScope.itemsInCart;
-		}, // getItemCount
+		lookupItemInCart: function(product) {
+			// let amountSelected;
+			// angular.forEach($rootScope.cart, (item,key) => {
+			// 	if(item.item.id === product.id) {
+			// 		amountSelected = item.quantity;
+			// 	} else {
+			// 		amountSelected = 0;
+			// 	}
+			// })
+			// return amountSelected;
+		},
 
-		getTotalSum: function(cart) {
-			$rootScope.totalCartSum = 0;
-			angular.forEach(cart, function (item, key) {
+		lookupCartItemsCount: function() {
+			let itemsInCart = 0;
+			angular.forEach($rootScope.cart, function (item, key) {
+				itemsInCart += item.quantity;
+			});
+			console.log('lookupCartItemsCount')
+			console.log(itemsInCart)
+			return itemsInCart;
+		},
+		// getItemCount: function(cart) {
+		// 	$rootScope.itemsInCart = 0;
+		// 	// let items = 0;
+		// 	angular.forEach(cart, function (item, key) {
+		// 		$rootScope.itemsInCart += item.quantity;
+		// 	});
+		// 	return $rootScope.itemsInCart;
+		// }, // getItemCount
+
+		lookupCartTotalSum: function() {
+			let totalCartSum = 0;
+			angular.forEach($rootScope.cart, function (item, key) {
 				let itemTotal = (item.quantity * Number(item.item.pricePerUnit));
-				$rootScope.totalCartSum += itemTotal;
+				totalCartSum += itemTotal;
 			});
-			return $rootScope.totalCartSum;
+			console.log('im the service passing the sum')
+			console.log(totalCartSum)
+			return totalCartSum;
+		}, // lookupCartTotalSum
 
-		}, // getTotalSum
+		// getTotalSum: function(cart) {
+		// 	$rootScope.totalCartSum = 0;
+		// 	angular.forEach(cart, function (item, key) {
+		// 		let itemTotal = (item.quantity * Number(item.item.pricePerUnit));
+		// 		$rootScope.totalCartSum += itemTotal;
+		// 	});
+		// 	return $rootScope.totalCartSum;
+		// }, // getTotalSum
 
 		getCart: function() {
 			return $rootScope.cart;
 		}, //getCart
 
 		refreshCart: function(cart) {
-			myCartObject.getItemCount(cart);
-			myCartObject.getTotalSum(cart);
+			// myCartObject.getItemCount(cart);
+			// myCartObject.getTotalSum(cart);
 		}
 
 	}; // myCartObject

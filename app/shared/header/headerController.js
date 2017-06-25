@@ -22,16 +22,19 @@ app.controller('HeaderController',
 
 	}
 
-	$scope.getItemCount = function(cart) {
-		ShoppingCartService.getItemCount(cart);
-	} // getItemCount
+	$scope.lookupCartItemsCount = function() {
+		return ShoppingCartService.lookupCartItemsCount();
+	} // lookupCartItemsCount
+// $scope.getItemCount = function(cart) {
+	// 	ShoppingCartService.getItemCount(cart);
+	// }
 
-	$scope.getTotalSum = function() {
-		//recursively
-		ShoppingCartService.getTotalSum();
-			// myCartObject.getItem();
-
-	} // getTotalSum
+	$scope.lookupCartTotalSum = function() {
+		return ShoppingCartService.lookupCartTotalSum();
+	} // lookupCartTotalSum
+	// $scope.getTotalSum = function() {
+	// 	ShoppingCartService.getTotalSum();
+	// }
 
 
 }]); // headerController
