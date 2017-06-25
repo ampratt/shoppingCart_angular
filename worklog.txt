@@ -18,8 +18,7 @@ DONE - on removing item from cart, sync list views
 
 DONE - display total sum and count in window
 
-DOING - add search filter from header
+DONE - make cart window scrollable (max number of views in window at a time)
 
-TODO - make cart window scrollable (max number of views in window at a time)
 
-TODO - stop cart window from closing
+COULD DO - add search filter functionality from header search bar

@@ -1,9 +1,10 @@
-<!--Dropdown button -->
+<!-- Dropdown button -->
 <div ng-controller="DropDownController">
 
-<div class="btn-group" uib-dropdown is-open="status.isopen">
+<div class="btn-group" 
+     uib-dropdown is-open="status.isopen" auto-close="outsideClick">
   <a class="btn btn-success" id="dropdown-cart-btn" 
-            uib-dropdown-toggle ng-disabled="disabled">
+     uib-dropdown-toggle ng-disabled="disabled">
             <div class="cart-icon">
                 <span><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 </span>
@@ -21,11 +22,10 @@
 
   <header>
     <h2 class="dropdown-cart-title">Your Shopping Cart</h2>
-    <hr />
   </header>
 
-    <div class="table-responsive">
-      <table class="table table-hover">
+    <div class="table-responsive tablecontainer">
+      <table class="table table-hover cart-items">
         <tr ng-repeat="item in cart">
             <td class="item-image">
                   <img class="img-responsive-xs" 
@@ -34,7 +34,7 @@
             </td>
             <td class="item-name">{{item.item.name}}</td>
             <td class="item-price">{{item.item.pricePerUnit}} &euro;</td>
-            <td>
+            <td class="quantity-selected">
                 <div class="item-quantity">{{item.quantity}}</div>
                 <div class="item-quantity-unit-type">{{item.item.unitType | uppercase}}</div>
             </td>
@@ -46,11 +46,9 @@
             </td>
         </tr>
       </table>
-    </div>
+    </div> <!-- tablecontainer -->
   
-  <hr />
-
-    <div class="table-responsive">
+    <div class="table-responsive totals-table">
       <table class="table table-hover">
         <tr class="cart-total">
             <td align="right" class="item-caption">Total # products:</td>
@@ -61,12 +59,12 @@
             <td align="right" class="total-cart-price">{{ lookupCartTotalSum() | number:2}} &euro;</td>
         </tr>
       </table>
-    </div>
+    </div> <!-- totals-table -->
 
   <hr />
   <footer>
       <button class="btn btn-sm btn-pink pull-right" type="button"
-                ng-click="showNotImplemented()">
+                ng-click="closeDropdown()">
         Continue to Checkout
         <span class="gotcha"><br>(if this app required that)</span>
     </button>
@@ -75,36 +73,4 @@
 
 </div> <!-- btn-group -->
 
-</div> <!-- DropDownController -->
-
-
-
-<!-- <div ng-controller="ModalCartController as $ctrl" class="modal-cart">
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body" id="modal-body">
-            <ul>
-                <li ng-repeat="item in $ctrl.items">
-                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ $ctrl.selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-        </div>
-    </script>
-
-
-    <div class="dropdown">
-        <button type="button" class="btn btn-success dropdown-toggle" ng-click="$ctrl.open()">Open me!</button>
-        
-    </div>
-   
-    <div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>
-    <div class="modal-parent">
-    </div>
-</div>
+</div> <!-- DropDownController 
