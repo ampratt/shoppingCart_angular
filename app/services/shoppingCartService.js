@@ -10,7 +10,7 @@ app.factory('ShoppingCartService',
 			$rootScope.cart = resp.data;
 			console.log('cart contents:')
 			console.log($rootScope.cart);
-		});// get
+		}); // get
 
 	myCartObject = {
 		addToCart: function(item) {
@@ -33,10 +33,8 @@ app.factory('ShoppingCartService',
 		}, // addToCart
 
 		removeFromCart: function(item) {
-			let existingProduct = $rootScope.cart.findIndex(obj => obj.item.id === item.id);//indexOf(item);
-			// console.log(existingProduct);
+			let existingProduct = $rootScope.cart.findIndex(obj => obj.item.id === item.id); 
 			if(existingProduct != -1) {
-				// console.log('removing 1 from quantity')
 				$rootScope.cart[existingProduct].quantity -= 1;
 				
 				// remove object from cart if quantity is now 0
@@ -51,7 +49,7 @@ app.factory('ShoppingCartService',
 		}, // removeFromCart
 
 		removeAllByItemType: function(item) {
-			let existingProduct = $rootScope.cart.findIndex(obj => obj.item.id === item.id);//indexOf(item);
+			let existingProduct = $rootScope.cart.findIndex(obj => obj.item.id === item.id);
 			if(existingProduct != -1) {		
 				// remove object completely from cart
 				$rootScope.cart.splice(existingProduct, 1);
@@ -80,14 +78,6 @@ app.factory('ShoppingCartService',
 			});
 			return itemsInCart;
 		},
-		// getItemCount: function(cart) {
-		// 	$rootScope.itemsInCart = 0;
-		// 	// let items = 0;
-		// 	angular.forEach(cart, function (item, key) {
-		// 		$rootScope.itemsInCart += item.quantity;
-		// 	});
-		// 	return $rootScope.itemsInCart;
-		// }, // getItemCount
 
 		lookupCartTotalSum: function() {
 			let totalCartSum = 0;

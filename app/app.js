@@ -2,12 +2,6 @@ var app = angular.module('shoppingCartApp',
 	['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap']);	//'filter' 'mgcrea.ngStrap'
 
 
-// check if anything is in the cart at startup
-// app.run(['$rootScope', function($rootScope) {
-
-// }]); // run
-
-
 app.config(['$routeProvider', '$locationProvider', 
 		function($routeProvider, $locationProvider) {
 
@@ -44,10 +38,7 @@ app.config(['$routeProvider', '$locationProvider',
 			redirectTo: '/products'
 		});
 
-
 	$locationProvider
 	  .html5Mode(false)
 	  .hashPrefix('!');
-	// $locationProvider.html5Mode(true);
-	// $locationProvider.hashPrefix('');
 }]);
