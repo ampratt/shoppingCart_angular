@@ -23,12 +23,12 @@ app.factory('ShoppingCartService',
 
 	myCartObject = {
 		addToCart: function(item) {
-			let existingProduct = $rootScope.cart.findIndex(obj => obj.item.id === item.id);
-			console.log('existingProduct')
-			console.log(existingProduct)
-			if(existingProduct != -1) {
+			let existingProductIndex = $rootScope.cart.findIndex(obj => obj.item.id === item.id);
+			console.log('existingProductIndex')
+			console.log(existingProductIndex)
+			if(existingProductIndex != -1) {
 				console.log('adding 1 to quant')
-				$rootScope.cart[existingProduct].quantity += 1;
+				$rootScope.cart[existingProductIndex].quantity += 1;
 			} else {
 				console.log('adding new item')
 				let newItem = {
@@ -37,11 +37,8 @@ app.factory('ShoppingCartService',
 				}
 				$rootScope.cart.push(newItem);
 			}
-			console.log('before explicit update')
+			console.log('cart after addition')
 			console.log($rootScope.cart)
-			// myCartObject.refreshCart($rootScope.cart);
-			// console.log('refreshed cart')
-			// console.log($rootScope.cart)
 		}, // addToCart
 
 		removeFromCart: function(item) {
@@ -65,8 +62,19 @@ app.factory('ShoppingCartService',
 
 		},
 
-		lookupItemInCart: function(product) {
-			// let amountSelected;
+		lookupItemInCart: function(item) {
+			if (typeof $rootScope.cart !== 'undefined'){
+				let amountSelected = 0;
+				let existingProductIndex = $rootScope.cart.findIndex(obj => obj.item.id === item.id);
+				
+				if(existingProductIndex != -1) {
+					amountSelected = $rootScope.cart[existingProductIndex].quantity;
+				}
+				console.log('amountSelected')
+				console.log(amountSelected)
+				return amountSelected;
+			}
+			// this does work ...except that the loop was the cause of some inital cart items not displaying
 			// angular.forEach($rootScope.cart, (item,key) => {
 			// 	if(item.item.id === product.id) {
 			// 		amountSelected = item.quantity;
@@ -82,8 +90,6 @@ app.factory('ShoppingCartService',
 			angular.forEach($rootScope.cart, function (item, key) {
 				itemsInCart += item.quantity;
 			});
-			console.log('lookupCartItemsCount')
-			console.log(itemsInCart)
 			return itemsInCart;
 		},
 		// getItemCount: function(cart) {
@@ -101,8 +107,6 @@ app.factory('ShoppingCartService',
 				let itemTotal = (item.quantity * Number(item.item.pricePerUnit));
 				totalCartSum += itemTotal;
 			});
-			console.log('im the service passing the sum')
-			console.log(totalCartSum)
 			return totalCartSum;
 		}, // lookupCartTotalSum
 

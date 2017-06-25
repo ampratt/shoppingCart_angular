@@ -35,16 +35,7 @@ app.controller('ProductListController',
 
 
 	$scope.lookupItemInCart = function(product) {
-		// ShoppingCartService.lookupItemInCart(product);
-			let amountSelected;
-			angular.forEach($rootScope.cart, (item,key) => {
-				if(item.item.id === product.id) {
-					amountSelected = item.quantity;
-				} else {
-					amountSelected = 0;
-				}
-			})
-			return amountSelected;		
+		return ShoppingCartService.lookupItemInCart(product);	
 	}
 
 	$scope.addToCart = function(item) {
