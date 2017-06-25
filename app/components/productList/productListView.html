@@ -42,7 +42,11 @@
                             ng-click="removeFromCart(product)"><span>-</span></button>
 
                     <div class="amount-selected-box">
-                      <div class="amount-selected">{{ product.amountSelected }}</div>
+                      <div class="amount-selected">
+                        {{ lookupItemInCart(product) }}
+                        <!-- {{ cart[$id].quantity }} -->
+                        <!-- {{ product.amountSelected }} -->
+                      </div>
                       <div class="amount-selected-unit-type">{{ product.unitType }}</div>
                     </div> <!-- amount-selected-box -->
 

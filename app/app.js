@@ -3,9 +3,9 @@ var app = angular.module('shoppingCartApp',
 
 
 // check if anything is in the cart at startup
-app.run(['$rootScope', function($rootScope) {
+// app.run(['$rootScope', function($rootScope) {
 
-}]); // run
+// }]); // run
 
 
 app.config(['$routeProvider', '$locationProvider', 

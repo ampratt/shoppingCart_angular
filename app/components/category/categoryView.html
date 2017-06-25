@@ -38,10 +38,14 @@
                   <div class="amount-selector"
                         ng-show="hover">
                     
-                    <button type="button" class="btn btn-danger btn-circle btn-circle-minus"><span>-</span></button>
+                    <button type="button" class="btn btn-danger btn-circle btn-circle-minus"
+                          ng-click="removeFromCart(product)"><span>-</span></button>
 
                     <div class="amount-selected-box">
-                      <div class="amount-selected">{{ product.amountSelected }}</div>
+                      <div class="amount-selected">
+                        {{ lookupItemInCart(product) }}
+                        <!-- {{ product.amountSelected }} -->
+                      </div>
                       <div class="amount-selected-unit-type">{{ product.unitType }}</div>
                     </div> <!-- amount-selected-box -->
 
