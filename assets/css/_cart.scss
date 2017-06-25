@@ -59,11 +59,11 @@
 	font-weight: bold;
 	font-size: 17px;
 	> a {
-		color: lighten(black, 30%);
+		color: 	lighten(black, 50%);
 	}
 	> a:hover {
 		text-decoration: none;
-		color: black;
+		color: $myPinkBg;
 		cursor: pointer;
 	}
 }

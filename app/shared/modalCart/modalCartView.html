@@ -9,10 +9,7 @@
 </span>
             </div>
             <div class="cart-info" ng-controller="HeaderController">
-                <div>
-                    {{ lookupCartTotalSum() | number:2 }} &euro;
-                </div>
-                <!-- <div ng-show="totalCartSum">{{ totalCartSum | number:2 }} &euro;</div> -->
+                <div>{{ lookupCartTotalSum() | number:2 }} &euro;</div>
                 <div>{{ lookupCartItemsCount() }} items</div>
             </div>
             <div class="cart-caret">
@@ -31,8 +28,9 @@
       <table class="table table-hover">
         <tr ng-repeat="item in cart">
             <td class="item-image">
-                  <img ng-src="assets/images/products/{{item.item.shortname}}.png" alt="Photo of {{item.item.name}}"
-                      class="img-responsive-xs" />
+                  <img class="img-responsive-xs" 
+                        ng-src="assets/images/products/{{item.item.shortname}}.png" 
+                        alt="Photo of {{item.item.name}}" />
             </td>
             <td class="item-name">{{item.item.name}}</td>
             <td class="item-price">{{item.item.pricePerUnit}} &euro;</td>
@@ -40,7 +38,12 @@
                 <div class="item-quantity">{{item.quantity}}</div>
                 <div class="item-quantity-unit-type">{{item.item.unitType | uppercase}}</div>
             </td>
-            <td class="item-delete-icon"><a type="button" ng-click="removeFromCart(item)">X</a></td>
+            <td class="item-delete-icon">
+                <a type="button" class=""
+                    ng-click="removeAllByItemType(item.item)">
+                    X
+                </a>
+            </td>
         </tr>
       </table>
     </div>
@@ -51,18 +54,19 @@
       <table class="table table-hover">
         <tr class="cart-total">
             <td align="right" class="item-caption">Total # products:</td>
-            <td align="right" class="total-cart-count">{{ itemsInCart }}</td>
+            <td align="right" class="total-cart-count">{{ lookupCartItemsCount() }}</td>
         </tr>
         <tr class="cart-total">
             <td align="right" class="item-caption">Total Cost:</td>
-            <td align="right" class="total-cart-price">{{ totalCartSum | number:2}} &euro;</td>
+            <td align="right" class="total-cart-price">{{ lookupCartTotalSum() | number:2}} &euro;</td>
         </tr>
       </table>
     </div>
 
   <hr />
   <footer>
-      <button class="btn btn-sm btn-pink pull-right" type="button">
+      <button class="btn btn-sm btn-pink pull-right" type="button"
+                ng-click="showNotImplemented()">
         Continue to Checkout
         <span class="gotcha"><br>(if this app required that)</span>
     </button>

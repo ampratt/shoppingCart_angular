@@ -19,7 +19,8 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for...">
           <span class="input-group-btn">
-            <button class="btn search-btn" type="button">
+            <button class="btn search-btn" type="button"
+                    ng-click="showNotImplemented()">
               <span class="icon icon-search">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </span>
@@ -70,8 +71,10 @@
       </div>
 
       <div class="col-xs-4 text-right btns-vert">
-        <a class="btn btn-default btn-sm btn-register" ng-href="">Register</a>
-        <a class="btn btn-sm btn-pink" ng-href="">Login</a>
+        <a class="btn btn-default btn-sm btn-register" 
+            ng-click="showNotImplemented()" ng-href="">Register</a>
+        <a class="btn btn-sm btn-pink" 
+            ng-click="showNotImplemented()" ng-href="">Login</a>
         
       </div>
       <!-- <ul class="nav navbar-right list-inline">

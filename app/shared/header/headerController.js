@@ -1,6 +1,6 @@
 app.controller('HeaderController', 
-	['$scope', '$http', '$location', 'ShoppingCartService',
-	function($scope, $http, $location, ShoppingCartService) {
+	['$scope', '$http', '$location', 'ShoppingCartService', '$window',
+	function($scope, $http, $location, ShoppingCartService, $window) {
 
 
 	$http.get('app/data.json')
@@ -17,6 +17,10 @@ app.controller('HeaderController',
 	$scope.removeFromCart = function(item) {	
 		ShoppingCartService.removeFromCart(item);
 	}// removeFromCart
+
+	$scope.removeAllByItemType = function(item) {
+		ShoppingCartService.removeAllByItemType(item);
+	}
 
 	$scope.getItem = function() {
 
@@ -35,6 +39,10 @@ app.controller('HeaderController',
 	// $scope.getTotalSum = function() {
 	// 	ShoppingCartService.getTotalSum();
 	// }
+
+	$scope.showNotImplemented = function() {
+		$window.alert('This functionality has not been implemented in this demo');
+	}
 
 
 }]); // headerController

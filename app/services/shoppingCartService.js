@@ -3,8 +3,6 @@ app.factory('ShoppingCartService',
 	function($rootScope, $location, $http) {
 
 	let myCartObject;
-	$rootScope.itemsInCart = 0;
-	$rootScope.totalCartSum = 0;
 	$rootScope.cart;
 
 	$http.get('app/example-cart.json')
@@ -12,13 +10,6 @@ app.factory('ShoppingCartService',
 			$rootScope.cart = resp.data;
 			console.log('cart contents:')
 			console.log($rootScope.cart);
-
-			// myCartObject.getItemCount($rootScope.cart);
-			// myCartObject.getTotalSum($rootScope.cart);
-
-			// angular.forEach($rootScope.cart, function (item, key) {
-			// 	$rootScope.itemsInCart += item.quantity;
-			// });
 		});// get
 
 	myCartObject = {
@@ -43,24 +34,32 @@ app.factory('ShoppingCartService',
 
 		removeFromCart: function(item) {
 			let existingProduct = $rootScope.cart.findIndex(obj => obj.item.id === item.id);//indexOf(item);
-			console.log(existingProduct);
+			// console.log(existingProduct);
 			if(existingProduct != -1) {
+				// console.log('removing 1 from quantity')
 				$rootScope.cart[existingProduct].quantity -= 1;
 				
-				// if it was the last of these items in cart, fully remove from cart
+				// remove object from cart if quantity is now 0
 				if($rootScope.cart[existingProduct].quantity === 0) {
 					$rootScope.cart.splice(existingProduct, 1);
 				}
-				myCartObject.refreshCart($rootScope.cart);
-				console.log('refreshed cart')
+				console.log('cart AFTER removal')
 				console.log($rootScope.cart)
-			} 
-			// $rootScope.cart.splice(existingProduct, 1);
+			} else { 
+				console.warn('Sorry, You cant delete something from nothing'); 
+			}
 		}, // removeFromCart
 
-		getItem: function() {
-
-		},
+		removeAllByItemType: function(item) {
+			let existingProduct = $rootScope.cart.findIndex(obj => obj.item.id === item.id);//indexOf(item);
+			if(existingProduct != -1) {		
+				// remove object completely from cart
+				$rootScope.cart.splice(existingProduct, 1);
+				// $rootScope.cart[existingProduct].quantity = 0
+			} else { 
+				console.warn('Sorry, You cant delete something from nothing'); 
+			}
+		}, // removeAllByItemType
 
 		lookupItemInCart: function(item) {
 			if (typeof $rootScope.cart !== 'undefined'){
@@ -70,19 +69,8 @@ app.factory('ShoppingCartService',
 				if(existingProductIndex != -1) {
 					amountSelected = $rootScope.cart[existingProductIndex].quantity;
 				}
-				console.log('amountSelected')
-				console.log(amountSelected)
 				return amountSelected;
 			}
-			// this does work ...except that the loop was the cause of some inital cart items not displaying
-			// angular.forEach($rootScope.cart, (item,key) => {
-			// 	if(item.item.id === product.id) {
-			// 		amountSelected = item.quantity;
-			// 	} else {
-			// 		amountSelected = 0;
-			// 	}
-			// })
-			// return amountSelected;
 		},
 
 		lookupCartItemsCount: function() {
@@ -109,7 +97,6 @@ app.factory('ShoppingCartService',
 			});
 			return totalCartSum;
 		}, // lookupCartTotalSum
-
 		// getTotalSum: function(cart) {
 		// 	$rootScope.totalCartSum = 0;
 		// 	angular.forEach(cart, function (item, key) {
@@ -118,15 +105,6 @@ app.factory('ShoppingCartService',
 		// 	});
 		// 	return $rootScope.totalCartSum;
 		// }, // getTotalSum
-
-		getCart: function() {
-			return $rootScope.cart;
-		}, //getCart
-
-		refreshCart: function(cart) {
-			// myCartObject.getItemCount(cart);
-			// myCartObject.getTotalSum(cart);
-		}
 
 	}; // myCartObject
 

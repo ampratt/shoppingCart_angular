@@ -40,7 +40,6 @@ app.controller('ProductListController',
 
 	$scope.addToCart = function(item) {
 		ShoppingCartService.addToCart(item);
-
 		//update amount selector
 		// let objIndex = $scope.products.findIndex(obj => obj.id == item.id);
 		// //Update object's name property.
